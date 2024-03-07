@@ -19,6 +19,8 @@ function ShopPage() {
       console.log(clothingData);
     } catch (error) {
       alert(error);
+    } finally {
+      setLoading(false);
     }
   };
 
