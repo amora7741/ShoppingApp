@@ -28,7 +28,7 @@ nav a {
   text-transform: uppercase;
 }
 
-nav a::after {
+.nav-item::after {
   content: '';
   width: 0;
   height: 3px;
@@ -38,7 +38,7 @@ nav a::after {
   transition: all 0.3s ease;
 }
 
-nav a:hover::after {
+.nav-item:hover::after {
   width: 100%;
 }
 

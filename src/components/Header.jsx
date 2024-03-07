@@ -8,10 +8,14 @@ function Header() {
           <Link to='/'>Breeze</Link>
         </li>
         <li>
-          <Link to='/'>Home</Link>
+          <Link to='/' className='nav-item'>
+            Home
+          </Link>
         </li>
         <li>
-          <Link to='shop'>Shop</Link>
+          <Link to='shop' className='nav-item'>
+            Shop
+          </Link>
         </li>
       </ul>
       <div className='shoppingcart'>Cart: 0 Items</div>
