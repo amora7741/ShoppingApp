@@ -10,8 +10,38 @@ ul {
   list-style: none;
 }
 
-header ul,
+nav,
+nav ul,
 footer {
   display: flex;
   gap: 1rem;
+}
+
+nav {
+  justify-content: space-between;
+  font-size: 1.5rem;
+  padding: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav a::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background-color: black;
+  margin: auto;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+footer {
+  justify-content: center;
 }
