@@ -1,13 +1,20 @@
+import { Link } from 'react-router-dom';
+
 function Header() {
   return (
     <header>
       <nav>
         <ul>
-          <li>Logo</li>
-          <li>Home</li>
-          <li>Shop</li>
+          <li>
+            <Link to='/'>Breeze</Link>
+          </li>
+          <li>
+            <Link to='/'>Home</Link>
+          </li>
+          <li>
+            <Link to='shop'>Shop</Link>
+          </li>
         </ul>
-        <div></div>
       </nav>
     </header>
   );

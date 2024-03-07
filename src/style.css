@@ -5,3 +5,13 @@
   box-sizing: border-box;
   font-family: 'Saira Condensed', sans-serif;
 }
+
+ul {
+  list-style: none;
+}
+
+header ul,
+footer {
+  display: flex;
+  gap: 1rem;
+}
