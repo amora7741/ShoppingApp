@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --card-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -23,9 +28,11 @@ body {
 
 #root {
   padding: 5px 15px;
-  display: grid;
-  grid-template-rows: 1fr 10fr 1fr;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+  min-height: 100vh;
 }
 
 nav,
@@ -112,8 +119,11 @@ nav a {
 
 .shopping-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   gap: 1rem;
+  padding: 45px;
 }
 
 #sort {
@@ -127,20 +137,45 @@ nav a {
 .item-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .item-card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
   gap: 1rem;
+  background-color: white;
+  padding: 10px;
+  flex: 1 1 30rem;
+  height: 20rem;
+  box-shadow: var(--card-shadow);
 }
 
 .item-card img {
-  width: 100%;
-  max-width: 30px;
+  align-self: center;
+  width: 50%;
+  height: 80%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.item-card-right {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  gap: 1rem;
+}
+
+.item-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 5px;
 }
 
 footer {
-  justify-content: center;
+  align-self: center;
 }

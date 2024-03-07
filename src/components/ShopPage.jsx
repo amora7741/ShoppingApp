@@ -39,6 +39,7 @@ function ShopPage() {
       id={item.id}
       name={item.title}
       imageUrl={item.image}
+      price={item.price}
     />
   );
 
