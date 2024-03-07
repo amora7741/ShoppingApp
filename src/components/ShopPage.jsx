@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 
+import { BeatLoader } from 'react-spinners';
+
 function ShopPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [clothing, setClothing] = useState([]);
 
   const fetchItems = async () => {
     try {
@@ -16,7 +19,7 @@ function ShopPage() {
 
       let clothingData = await response.json();
 
-      console.log(clothingData);
+      setClothing(clothingData);
     } catch (error) {
       alert(error);
     } finally {
@@ -30,8 +33,7 @@ function ShopPage() {
 
   return (
     <main>
-      <h1>Hello There</h1>
-      <h2>This is my shop page</h2>
+      {loading ? <BeatLoader color='#000' size={25} /> : <h1>Done Loading</h1>}
     </main>
   );
 }
