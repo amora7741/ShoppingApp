@@ -3,10 +3,12 @@ import { useEffect } from 'react';
 
 import { BeatLoader } from 'react-spinners';
 
+import ItemCard from './ItemCard';
+
 function ShopPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [clothing, setClothing] = useState([]);
+  const [items, setItems] = useState([]);
 
   const fetchItems = async () => {
     try {
@@ -17,9 +19,9 @@ function ShopPage() {
         throw new Error(`HTTP Error: Status Code ${response.status}`);
       }
 
-      let clothingData = await response.json();
+      let itemsData = await response.json();
 
-      setClothing(clothingData);
+      setItems(itemsData);
     } catch (error) {
       alert(error);
     } finally {
@@ -31,9 +33,29 @@ function ShopPage() {
     fetchItems();
   }, []);
 
+  const renderItem = (item) => (
+    <ItemCard
+      key={item.id}
+      id={item.id}
+      name={item.title}
+      imageUrl={item.image}
+    />
+  );
+
   return (
-    <main>
-      {loading ? <BeatLoader color='#000' size={25} /> : <h1>Done Loading</h1>}
+    <main className='shopping-container'>
+      {loading ? (
+        <BeatLoader color='#000' size={25} />
+      ) : (
+        <>
+          <button id='sort'>Sort Items</button>
+          <div className='item-container'>
+            {items.map((item) => (
+              <>{renderItem(item)}</>
+            ))}
+          </div>
+        </>
+      )}
     </main>
   );
 }
