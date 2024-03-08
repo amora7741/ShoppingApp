@@ -7,8 +7,8 @@ import Footer from './Footer';
 function Layout() {
   const [cart, setCart] = useState([]);
 
-  const addToCart = (item) => {
-    setCart((prevCart) => [...prevCart, item]);
+  const addToCart = (item, quantity) => {
+    setCart((prevCart) => [...prevCart, { item: item, quantity: quantity }]);
   };
 
   return (

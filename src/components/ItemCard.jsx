@@ -5,9 +5,8 @@ function ItemCard({ id, name, imageUrl, price, onAddToCart }) {
   const [quantity, setQuantity] = useState(1);
 
   const handleAddToCart = () => {
-    if (onAddToCart) {
-      onAddToCart(id, quantity);
-    }
+    onAddToCart(quantity);
+
     setButtonText('Item Added');
     setTimeout(() => {
       setButtonText('Add To Cart');

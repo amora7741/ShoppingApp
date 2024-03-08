@@ -42,7 +42,7 @@ function ShopPage() {
       name={item.title}
       imageUrl={item.image}
       price={item.price}
-      onAddToCart={() => addToCart(item)}
+      onAddToCart={(quantity) => addToCart(item, quantity)}
     />
   );
 
