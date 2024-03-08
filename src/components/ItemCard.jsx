@@ -4,12 +4,14 @@ function ItemCard({ id, name, imageUrl, price }) {
       <img src={imageUrl} alt={name} />
       <div className='item-card-right'>
         <p>{name}</p>
-        <div className='item-info'>
-          <p>${price}</p>
-          <p>In Stock</p>
+        <div className='rightcontainer'>
+          <div className='item-info'>
+            <p>${price}</p>
+            <p>In Stock</p>
+          </div>
+          <hr />
+          <button id='addtocart'>Add To cart</button>
         </div>
-        <hr />
-        <button>Add To cart</button>
       </div>
     </div>
   );
