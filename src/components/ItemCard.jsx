@@ -2,15 +2,24 @@ import React, { useState } from 'react';
 
 function ItemCard({ id, name, imageUrl, price, onAddToCart }) {
   const [buttonText, setButtonText] = useState('Add To Cart');
+  const [quantity, setQuantity] = useState(1);
 
   const handleAddToCart = () => {
     if (onAddToCart) {
-      onAddToCart(id);
+      onAddToCart(id, quantity);
     }
     setButtonText('Item Added');
     setTimeout(() => {
       setButtonText('Add To Cart');
     }, 2000);
+  };
+
+  const incrementQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const decrementQuantity = () => {
+    setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
   };
 
   return (
@@ -24,9 +33,29 @@ function ItemCard({ id, name, imageUrl, price, onAddToCart }) {
             <p>In Stock</p>
           </div>
           <hr />
-          <button id='addtocart' onClick={handleAddToCart}>
-            {buttonText}
-          </button>
+          <div className='buttons'>
+            <div className='quantity-selector'>
+              <button className='decrement' onClick={decrementQuantity}>
+                -
+              </button>
+              <input
+                type='number'
+                className='quantity-input'
+                value={quantity}
+                onChange={(e) =>
+                  setQuantity(Math.max(1, parseInt(e.target.value) || 1))
+                }
+                min='1'
+                step='1'
+              />
+              <button className='increment' onClick={incrementQuantity}>
+                +
+              </button>
+            </div>
+            <button id='addtocart' onClick={handleAddToCart}>
+              {buttonText}
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -183,7 +183,55 @@ main {
   gap: 10px;
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 120px;
+}
+
+.quantity-input {
+  font-size: inherit;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.decrement,
+.increment {
+  font-size: inherit;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.decrement {
+  left: 0;
+}
+
+.increment {
+  right: 0;
+}
+
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 #addtocart {
+  padding: 5px;
   font-size: inherit;
   text-transform: uppercase;
   background-color: black;
