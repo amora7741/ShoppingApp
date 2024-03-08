@@ -46,6 +46,7 @@ function ItemCard({ id, name, imageUrl, price, onAddToCart }) {
                 }
                 min='1'
                 step='1'
+                name='quantity'
               />
               <button className='increment' onClick={incrementQuantity}>
                 +
