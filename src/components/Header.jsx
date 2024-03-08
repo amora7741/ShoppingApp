@@ -7,6 +7,11 @@ function Header({ cart }) {
     console.log(cart);
   };
 
+  const totalQuantity = cart.reduce(
+    (total, cartItem) => total + cartItem.quantity,
+    0
+  );
+
   return (
     <nav>
       <div className='logo'>
@@ -27,7 +32,7 @@ function Header({ cart }) {
         </Link>
       </div>
       <Link to='cart' className='nav-item' onClick={showItems}>
-        Cart: {cart.length} Items
+        Cart: {totalQuantity} Items
       </Link>
     </nav>
   );
