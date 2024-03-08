@@ -134,6 +134,7 @@ nav a {
 }
 
 .item-card {
+  font-size: 1.3rem;
   text-transform: uppercase;
   display: flex;
   justify-content: space-around;
@@ -147,7 +148,7 @@ nav a {
 
 .item-card img {
   align-self: center;
-  width: 45%;
+  width: 35%;
   height: 80%;
   object-fit: contain;
   object-position: center;
@@ -158,8 +159,8 @@ nav a {
   display: flex;
   text-align: center;
   flex-direction: column;
-  justify-content: space-evenly;
-  padding: 5px;
+  justify-content: space-between;
+  padding: 20px 0px;
   gap: 1rem;
 }
 
@@ -176,6 +177,7 @@ nav a {
 }
 
 #addtocart {
+  font-size: inherit;
   text-transform: uppercase;
   background-color: black;
   border: 1px solid black;
