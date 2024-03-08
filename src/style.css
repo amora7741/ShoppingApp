@@ -178,6 +178,7 @@ nav a {
 #addtocart {
   text-transform: uppercase;
   background-color: black;
+  border: 1px solid black;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;

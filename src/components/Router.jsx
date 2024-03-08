@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import HomePage from './HomePage';
 import ErrorPage from './ErrorPage';
 import ShopPage from './ShopPage';
+import AboutPage from './AboutPage';
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -16,6 +17,10 @@ const Router = () => {
         {
           path: 'shop',
           element: <ShopPage />,
+        },
+        {
+          path: 'about',
+          element: <AboutPage />,
         },
       ],
     },
