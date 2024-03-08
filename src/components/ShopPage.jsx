@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useOutletContext } from 'react-router-dom';
 
 import { BeatLoader } from 'react-spinners';
 
@@ -9,6 +9,8 @@ function ShopPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [items, setItems] = useState([]);
+
+  const { addToCart } = useOutletContext();
 
   const fetchItems = async () => {
     try {
@@ -40,6 +42,7 @@ function ShopPage() {
       name={item.title}
       imageUrl={item.image}
       price={item.price}
+      onAddToCart={() => addToCart(item)}
     />
   );
 

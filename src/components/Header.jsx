@@ -2,7 +2,11 @@ import { Link } from 'react-router-dom';
 
 import BreezeLogo from '../assets/logo.svg';
 
-function Header() {
+function Header({ cart }) {
+  const showItems = () => {
+    console.log(cart);
+  };
+
   return (
     <nav>
       <div className='logo'>
@@ -22,7 +26,9 @@ function Header() {
           About
         </Link>
       </div>
-      <div className='shoppingcart nav-item'>Cart: 0 Items</div>
+      <div className='shoppingcart nav-item' onClick={showItems}>
+        Cart: {cart.length} Items
+      </div>
     </nav>
   );
 }
