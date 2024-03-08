@@ -26,9 +26,9 @@ function Header({ cart }) {
           About
         </Link>
       </div>
-      <div className='shoppingcart nav-item' onClick={showItems}>
+      <Link to='cart' className='nav-item' onClick={showItems}>
         Cart: {cart.length} Items
-      </div>
+      </Link>
     </nav>
   );
 }

@@ -5,6 +5,7 @@ import HomePage from './HomePage';
 import ErrorPage from './ErrorPage';
 import ShopPage from './ShopPage';
 import AboutPage from './AboutPage';
+import CartPage from './CartPage';
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const Router = () => {
         {
           path: 'about',
           element: <AboutPage />,
+        },
+        {
+          path: 'cart',
+          element: <CartPage />,
         },
       ],
     },

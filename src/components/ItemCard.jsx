@@ -1,4 +1,18 @@
+import React, { useState } from 'react';
+
 function ItemCard({ id, name, imageUrl, price, onAddToCart }) {
+  const [buttonText, setButtonText] = useState('Add To Cart');
+
+  const handleAddToCart = () => {
+    if (onAddToCart) {
+      onAddToCart(id);
+    }
+    setButtonText('Item Added');
+    setTimeout(() => {
+      setButtonText('Add To Cart');
+    }, 2000);
+  };
+
   return (
     <div className='item-card'>
       <img src={imageUrl} alt={name} />
@@ -10,8 +24,8 @@ function ItemCard({ id, name, imageUrl, price, onAddToCart }) {
             <p>In Stock</p>
           </div>
           <hr />
-          <button id='addtocart' onClick={onAddToCart}>
-            Add To cart
+          <button id='addtocart' onClick={handleAddToCart}>
+            {buttonText}
           </button>
         </div>
       </div>
