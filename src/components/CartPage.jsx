@@ -6,6 +6,13 @@ import CartItem from './CartItem';
 function CartPage() {
   const { cart, totalQuantity } = useOutletContext();
 
+  const totalPrice = cart
+    .reduce(
+      (total, cartItem) => total + cartItem.item.price * cartItem.quantity,
+      0
+    )
+    .toFixed(2);
+
   const renderCartItem = (item) => (
     <CartItem
       imageUrl={item.item.image}
@@ -31,9 +38,12 @@ function CartPage() {
             </>
           ))}
         </div>
-        <div className='checkout-container'>
-          <h1>Checkout</h1>
-        </div>
+        {cart.length != 0 && (
+          <div className='checkout-container'>
+            <p>Total: ${totalPrice}</p>
+            <button id='checkout'>Checkout</button>
+          </div>
+        )}
       </div>
     </main>
   );
