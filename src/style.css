@@ -161,7 +161,7 @@ main {
   box-shadow: var(--card-shadow);
 }
 
-.item-card img {
+.itemimg {
   align-self: center;
   width: 35%;
   height: 80%;
@@ -308,9 +308,11 @@ footer {
 }
 
 .cartpage {
+  flex-direction: column;
   align-self: center;
   width: 90%;
-  align-items: flex-start;
+  gap: 1rem;
+  justify-content: flex-start;
   background-color: white;
   border: 1px solid black;
   box-shadow: var(--card-shadow);
@@ -320,4 +322,29 @@ footer {
 .cart-header {
   width: 100%;
   font-size: 1.5rem;
+}
+
+.cart-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-item-container {
+  width: 70%;
+}
+
+.cart-item-card {
+  height: 20rem;
+}
+
+.cart-card-left {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+
+.cartitemimg {
+  width: 50%;
 }

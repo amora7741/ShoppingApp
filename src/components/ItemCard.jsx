@@ -25,7 +25,7 @@ function ItemCard({ id, name, imageUrl, price, rating, onAddToCart }) {
 
   return (
     <div className='item-card'>
-      <img src={imageUrl} alt={name} />
+      <img src={imageUrl} alt={name} className='itemimg' />
       <div className='item-card-right'>
         <p>{name}</p>
         <div className='rightcontainer'>
