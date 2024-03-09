@@ -1,8 +1,15 @@
+import { useEffect } from 'react';
+import { useOutletContext } from 'react-router-dom';
+
 function CartPage() {
+  const { cart, totalQuantity } = useOutletContext();
+
   return (
-    <main>
-      <h1>Hello</h1>
-      <h2>This is my cart page</h2>
+    <main className='cartpage'>
+      <div className='cart-header'>
+        <h1>Cart: {totalQuantity} Items</h1>
+        <hr />
+      </div>
     </main>
   );
 }

@@ -7,6 +7,11 @@ import Footer from './Footer';
 function Layout() {
   const [cart, setCart] = useState([]);
 
+  const totalQuantity = cart.reduce(
+    (total, cartItem) => total + cartItem.quantity,
+    0
+  );
+
   const addToCart = (item, quantity) => {
     setCart((prevCart) => {
       const existingItemIndex = prevCart.findIndex(
@@ -28,8 +33,8 @@ function Layout() {
 
   return (
     <>
-      <Header cart={cart} />
-      <Outlet context={{ addToCart }} />
+      <Header cart={cart} totalQuantity={totalQuantity} />
+      <Outlet context={{ addToCart, cart, totalQuantity }} />
       <Footer />
     </>
   );

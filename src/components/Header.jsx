@@ -2,15 +2,10 @@ import { Link } from 'react-router-dom';
 
 import BreezeLogo from '../assets/logo.svg';
 
-function Header({ cart }) {
+function Header({ cart, totalQuantity }) {
   const showItems = () => {
     console.log(cart);
   };
-
-  const totalQuantity = cart.reduce(
-    (total, cartItem) => total + cartItem.quantity,
-    0
-  );
 
   return (
     <nav>
