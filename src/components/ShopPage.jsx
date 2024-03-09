@@ -42,6 +42,7 @@ function ShopPage() {
       name={item.title}
       imageUrl={item.image}
       price={item.price}
+      rating={item.rating.rate}
       onAddToCart={(quantity) => addToCart(item, quantity)}
     />
   );

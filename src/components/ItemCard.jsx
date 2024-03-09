@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-function ItemCard({ id, name, imageUrl, price, onAddToCart }) {
+import star from '../assets/star.svg';
+
+function ItemCard({ id, name, imageUrl, price, rating, onAddToCart }) {
   const [buttonText, setButtonText] = useState('Add To Cart');
   const [quantity, setQuantity] = useState(1);
 
@@ -29,7 +31,10 @@ function ItemCard({ id, name, imageUrl, price, onAddToCart }) {
         <div className='rightcontainer'>
           <div className='item-info'>
             <p>${price}</p>
-            <p>In Stock</p>
+            <div className='rating'>
+              <p>{rating}</p>
+              <img src={star} alt='Rating star' id='ratingstar' />
+            </div>
           </div>
           <hr />
           <div className='buttons'>
