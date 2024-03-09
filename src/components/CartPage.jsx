@@ -38,7 +38,7 @@ function CartPage() {
             </>
           ))}
         </div>
-        {cart.length != 0 && (
+        {cart.length !== 0 && (
           <div className='checkout-container'>
             <p>Total: ${totalPrice}</p>
             <button id='checkout'>Checkout</button>
