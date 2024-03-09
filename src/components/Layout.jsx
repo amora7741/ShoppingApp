@@ -31,10 +31,16 @@ function Layout() {
     });
   };
 
+  const removeFromCart = (item) => {
+    setCart((prevCart) => {
+      return prevCart.filter((cartItem) => cartItem.item.id !== item.item.id);
+    });
+  };
+
   return (
     <>
       <Header cart={cart} totalQuantity={totalQuantity} />
-      <Outlet context={{ addToCart, cart, totalQuantity }} />
+      <Outlet context={{ addToCart, cart, totalQuantity, removeFromCart }} />
       <Footer />
     </>
   );

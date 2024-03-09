@@ -4,7 +4,7 @@ import { useOutletContext } from 'react-router-dom';
 import CartItem from './CartItem';
 
 function CartPage() {
-  const { cart, totalQuantity } = useOutletContext();
+  const { cart, totalQuantity, removeFromCart } = useOutletContext();
 
   const totalPrice = cart
     .reduce(
@@ -19,6 +19,7 @@ function CartPage() {
       name={item.item.title}
       quantity={item.quantity}
       price={item.item.price}
+      onClick={() => removeFromCart(item)}
     />
   );
 

@@ -1,4 +1,4 @@
-function CartItem({ imageUrl, name, quantity, price }) {
+function CartItem({ imageUrl, name, quantity, price, onClick }) {
   return (
     <div className='cart-item-card'>
       <img src={imageUrl} alt='' className='itemimg cartitemimg' />
@@ -8,7 +8,7 @@ function CartItem({ imageUrl, name, quantity, price }) {
           <p>Qty: {quantity}</p>
           <p>Total: ${quantity * price}</p>
         </div>
-        <button id='remove' className='underline'>
+        <button id='remove' className='underline' onClick={onClick}>
           Remove
         </button>
       </div>
