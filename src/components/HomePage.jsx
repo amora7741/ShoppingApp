@@ -12,7 +12,7 @@ function HomePage() {
         <button id='startshopping' className='homebutton'>
           <Link to='shop'>Start Shopping</Link>
         </button>
-        <button id='about' className='homebutton nav-item'>
+        <button id='about' className='homebutton underline'>
           <Link to='about'>About Us</Link>
         </button>
       </div>

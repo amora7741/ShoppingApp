@@ -15,18 +15,18 @@ function Header({ cart, totalQuantity }) {
       </div>
 
       <div className='redirects'>
-        <Link to='/' className='nav-item'>
+        <Link to='/' className='underline'>
           Home
         </Link>
 
-        <Link to='shop' className='nav-item'>
+        <Link to='shop' className='underline'>
           Shop
         </Link>
-        <Link to='about' className='nav-item'>
+        <Link to='about' className='underline'>
           About
         </Link>
       </div>
-      <Link to='cart' className='nav-item' onClick={showItems}>
+      <Link to='cart' className='underline' onClick={showItems}>
         Cart: {totalQuantity} Items
       </Link>
     </nav>

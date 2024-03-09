@@ -6,6 +6,9 @@ function CartItem({ imageUrl, name, quantity, price }) {
         <p>{name}</p>
         <p>Qty: {quantity}</p>
         <p>Total: ${quantity * price}</p>
+        <button id='remove' className='underline'>
+          Remove
+        </button>
       </div>
     </div>
   );
