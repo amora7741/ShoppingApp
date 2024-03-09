@@ -29,7 +29,7 @@ nav,
 footer {
   display: flex;
   gap: 1rem;
-  padding: 0px 15px;
+  padding: 10px 15px;
 }
 
 nav {

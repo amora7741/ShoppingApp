@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 
-import { BeatLoader } from 'react-spinners';
+import { RingLoader } from 'react-spinners';
 
 import ItemCard from './ItemCard';
 
@@ -25,7 +25,7 @@ function ShopPage() {
 
       setItems(itemsData);
     } catch (error) {
-      alert(error);
+      setError(error);
     } finally {
       setLoading(false);
     }
@@ -47,10 +47,17 @@ function ShopPage() {
     />
   );
 
+  if (error) {
+    return <main className='shopping-container'>Server Error.</main>;
+  }
+
   return (
     <main className='shopping-container'>
       {loading ? (
-        <BeatLoader color='#000' size={25} />
+        <>
+          <RingLoader color='#000' size={100} />
+          <h1>LOADING</h1>
+        </>
       ) : (
         <>
           <button id='sort'>Sort Items</button>
