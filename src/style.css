@@ -389,3 +389,26 @@ footer {
   padding: 20px;
   cursor: pointer;
 }
+
+.bm-burger-button {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  right: 25px;
+  top: 30px;
+}
+
+.bm-burger-bars {
+  background: #373a47;
+}
+
+@media (max-width: 520px) {
+  nav {
+    justify-content: unset;
+    flex-direction: column;
+  }
+
+  .logo {
+    align-self: center;
+  }
+}
