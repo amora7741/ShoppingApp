@@ -31,6 +31,10 @@ function ShopPage() {
     }
   };
 
+  const handleSort = () => {
+    alert('Will implement later. Lul');
+  };
+
   useEffect(() => {
     fetchItems();
   }, []);
@@ -60,7 +64,9 @@ function ShopPage() {
         </>
       ) : (
         <>
-          <button id='sort'>Sort Items</button>
+          <button id='sort' onClick={handleSort}>
+            Sort Items
+          </button>
           <div className='item-container'>
             {items.map((item) => (
               <>{renderItem(item)}</>

@@ -23,6 +23,10 @@ function CartPage() {
     />
   );
 
+  const handleCheckout = () => {
+    alert('Will implement later. Lul');
+  };
+
   return (
     <main className='cartpage'>
       <div className='cart-header'>
@@ -42,7 +46,9 @@ function CartPage() {
         {cart.length !== 0 && (
           <div className='checkout-container'>
             <p>Total: ${totalPrice}</p>
-            <button id='checkout'>Checkout</button>
+            <button id='checkout' onClick={() => handleCheckout()}>
+              Checkout
+            </button>
           </div>
         )}
       </div>
