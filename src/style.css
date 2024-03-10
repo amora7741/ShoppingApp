@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
   --card-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
@@ -10,7 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Saira Condensed", sans-serif;
+  font-family: 'Saira Condensed', sans-serif;
 }
 
 body {
@@ -53,7 +53,7 @@ a:visited {
 }
 
 .underline::after {
-  content: "";
+  content: '';
   width: 0;
   height: 3px;
   background-color: black;
@@ -80,7 +80,7 @@ a:visited {
 
 .logo::before,
 .logo::after {
-  content: "";
+  content: '';
   height: 14px;
   width: 14px;
   position: absolute;
@@ -89,7 +89,7 @@ a:visited {
 }
 
 .logo::before {
-  content: "";
+  content: '';
   right: -10px;
   top: 0;
   border-top: 3px solid black;
@@ -98,7 +98,7 @@ a:visited {
 }
 
 .logo:after {
-  content: "";
+  content: '';
   left: -5px;
   bottom: 0;
   border-bottom: 3px solid black;
@@ -388,47 +388,4 @@ footer {
   font-size: inherit;
   padding: 20px;
   cursor: pointer;
-}
-
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.menu {
-  display: flex;
-  gap: 1rem;
-}
-
-.menu.open {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: var(--primary);
-  width: 100%;
-  padding: 1rem;
-}
-
-@media (max-width: 520px) {
-  .hamburger {
-    display: block;
-  }
-
-  .menu {
-    display: none;
-    gap: 0;
-  }
-
-  .menu.open {
-    display: block;
-  }
-
-  .redirects {
-    display: none;
-  }
 }
