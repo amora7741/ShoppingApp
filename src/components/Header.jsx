@@ -1,12 +1,20 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-
 import { slide as Menu } from 'react-burger-menu';
-
 import BreezeLogo from '../assets/logo.svg';
 
 function Header({ cart, totalQuantity }) {
   const shouldRenderHamburger = useMediaQuery({ query: '(max-width: 520px)' });
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleStateChange = (state) => {
+    setMenuOpen(state.isOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
   return (
     <nav>
@@ -16,17 +24,17 @@ function Header({ cart, totalQuantity }) {
       </div>
 
       {shouldRenderHamburger ? (
-        <Menu right>
-          <Link to='/' className='menu-item'>
+        <Menu right isOpen={menuOpen} onStateChange={handleStateChange}>
+          <Link to='/' className='menu-item' onClick={closeMenu}>
             Home
           </Link>
-          <Link to='shop' className='menu-item'>
+          <Link to='shop' className='menu-item' onClick={closeMenu}>
             Shop
           </Link>
-          <Link to='about' className='menu-item'>
+          <Link to='about' className='menu-item' onClick={closeMenu}>
             About
           </Link>
-          <Link to='cart' className='menu-item'>
+          <Link to='cart' className='menu-item' onClick={closeMenu}>
             Cart
           </Link>
         </Menu>
