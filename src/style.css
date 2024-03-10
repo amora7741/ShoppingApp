@@ -327,6 +327,7 @@ footer {
 .cart-container {
   width: 100%;
   display: flex;
+  gap: 1rem;
   flex: 1;
 }
 
@@ -334,17 +335,13 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 70%;
+  width: 50%;
 }
 
 .cart-item-card {
   height: 20rem;
   display: flex;
   justify-content: space-between;
-}
-
-.cartitemimg {
-  width: 50%;
 }
 
 .cart-card-right {

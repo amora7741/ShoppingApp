@@ -1,7 +1,7 @@
 function CartItem({ imageUrl, name, quantity, price, onClick }) {
   return (
     <div className='cart-item-card'>
-      <img src={imageUrl} alt='' className='itemimg cartitemimg' />
+      <img src={imageUrl} alt='' className='itemimg' />
       <div className='cart-card-right'>
         <div>
           <p>{name}</p>
