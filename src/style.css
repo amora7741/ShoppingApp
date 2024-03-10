@@ -412,4 +412,35 @@ footer {
   .logo {
     align-self: center;
   }
+
+  .logo img {
+    display: none;
+  }
+
+  .item-card {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+
+  .item-card-right {
+    width: 100%;
+  }
+
+  .home-titles {
+    font-size: 2.6rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .itemimg {
+    width: 50%;
+  }
+
+  #addtocart,
+  .quantity-selector {
+    width: 100%;
+  }
 }
