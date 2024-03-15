@@ -10,6 +10,7 @@ function Header({ cart, totalQuantity }) {
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
+
   const closeSidebar = () => {
     setSidebarOpen(false);
   };
@@ -23,22 +24,22 @@ function Header({ cart, totalQuantity }) {
           </a>
         </li>
         <li>
-          <Link to='/' className='underline'>
+          <Link to='/' className='underline' onClick={closeSidebar}>
             Home
           </Link>
         </li>
         <li>
-          <Link to='/shop' className='underline'>
+          <Link to='/shop' className='underline' onClick={closeSidebar}>
             Shop
           </Link>
         </li>
         <li>
-          <Link to='/about' className='underline'>
+          <Link to='/about' className='underline' onClick={closeSidebar}>
             About
           </Link>
         </li>
         <li>
-          <Link to='/cart' className='underline'>
+          <Link to='/cart' className='underline' onClick={closeSidebar}>
             Cart: {totalQuantity} Items
           </Link>
         </li>
