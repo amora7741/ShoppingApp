@@ -1,62 +1,81 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive';
-import { slide as Menu } from 'react-burger-menu';
 import BreezeLogo from '../assets/logo.svg';
+import HamburgerButton from '../assets/hamburgericon.svg';
+import CloseButton from '../assets/closebutton.svg';
 
 function Header({ cart, totalQuantity }) {
-  const shouldRenderHamburger = useMediaQuery({ query: '(max-width: 520px)' });
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const handleStateChange = (state) => {
-    setMenuOpen(state.isOpen);
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
   };
-
-  const closeMenu = () => {
-    setMenuOpen(false);
+  const closeSidebar = () => {
+    setSidebarOpen(false);
   };
 
   return (
     <nav>
-      <div className='logo'>
-        <img src={BreezeLogo} alt='Logo' />
-        <Link to='/'>Breeze</Link>
-      </div>
-
-      {shouldRenderHamburger ? (
-        <Menu right isOpen={menuOpen} onStateChange={handleStateChange}>
-          <Link to='/' className='menu-item' onClick={closeMenu}>
+      <ul className={`sidebar ${sidebarOpen ? 'showSidebar' : ''}`}>
+        <li>
+          <a href='#' onClick={closeSidebar}>
+            <img src={CloseButton} alt='' />
+          </a>
+        </li>
+        <li>
+          <Link to='/' className='underline'>
             Home
           </Link>
-          <Link to='shop' className='menu-item' onClick={closeMenu}>
+        </li>
+        <li>
+          <Link to='/shop' className='underline'>
             Shop
           </Link>
-          <Link to='about' className='menu-item' onClick={closeMenu}>
+        </li>
+        <li>
+          <Link to='/about' className='underline'>
             About
           </Link>
-          <Link to='cart' className='menu-item' onClick={closeMenu}>
-            Cart
-          </Link>
-        </Menu>
-      ) : (
-        <>
-          <div className='redirects'>
-            <Link to='/' className='underline'>
-              Home
-            </Link>
-
-            <Link to='shop' className='underline'>
-              Shop
-            </Link>
-            <Link to='about' className='underline'>
-              About
-            </Link>
-          </div>
-          <Link to='cart' className='underline'>
+        </li>
+        <li>
+          <Link to='/cart' className='underline'>
             Cart: {totalQuantity} Items
           </Link>
-        </>
-      )}
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <div className='logo'>
+            <img src={BreezeLogo} alt='Logo' />
+            <Link to='/'>Breeze</Link>
+          </div>
+        </li>
+        <li>
+          <Link to='/' className='underline hideMobile'>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to='/shop' className='underline hideMobile'>
+            Shop
+          </Link>
+        </li>
+        <li>
+          <Link to='/about' className='underline hideMobile'>
+            About
+          </Link>
+        </li>
+        <li className='cartnav'>
+          <Link to='/cart' className='underline hideMobile'>
+            Cart: {totalQuantity} Items
+          </Link>
+        </li>
+        <li className='hamburgerbutton'>
+          <a href='#' onClick={toggleSidebar}>
+            <img src={HamburgerButton} alt='' />
+          </a>
+        </li>
+      </ul>
     </nav>
   );
 }

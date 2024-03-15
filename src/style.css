@@ -25,6 +25,10 @@ body {
   min-height: 100vh;
 }
 
+button {
+  cursor: pointer;
+}
+
 nav,
 footer {
   display: flex;
@@ -38,14 +42,70 @@ nav {
   z-index: 1000;
   top: 0;
   align-items: center;
-  justify-content: space-between;
   font-size: 1.5rem;
+}
+
+nav ul {
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  list-style: none;
+  align-items: center;
+  text-align: center;
+}
+
+nav a {
+  padding: 0px 10px;
+}
+
+nav li {
+  display: flex;
+  align-items: center;
+}
+
+nav li:first-child {
+  margin-right: auto;
+}
+
+.cartnav {
+  margin-left: auto;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 1100;
+  background-color: rgba(255, 255, 255, 0.47);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  backdrop-filter: blur(10px);
+}
+
+.showSidebar {
+  display: flex;
+}
+
+.sidebar li,
+.sidebar a {
+  width: 100%;
+}
+
+.hamburgerbutton {
+  display: none;
 }
 
 a {
   color: inherit;
   text-decoration: none;
   text-transform: uppercase;
+  height: 100%;
 }
 
 a:visited {
@@ -405,18 +465,6 @@ footer {
   cursor: pointer;
 }
 
-.bm-burger-button {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  right: 25px;
-  top: 30px;
-}
-
-.bm-burger-bars {
-  background: #373a47;
-}
-
 .cart-item-image-container {
   display: flex;
   align-items: center;
@@ -452,20 +500,6 @@ footer {
 }
 
 @media (max-width: 520px) {
-  nav {
-    justify-content: unset;
-    flex-direction: column;
-    border-left: 1px solid black;
-  }
-
-  .logo {
-    align-self: center;
-  }
-
-  .logo img {
-    display: none;
-  }
-
   .item-card {
     flex-direction: column;
     height: auto;
@@ -495,5 +529,17 @@ footer {
 
   .cart-header h1 {
     align-self: center;
+  }
+
+  .hideMobile {
+    display: none;
+  }
+
+  .hamburgerbutton {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
   }
 }
