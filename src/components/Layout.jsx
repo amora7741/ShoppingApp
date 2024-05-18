@@ -40,7 +40,9 @@ function Layout() {
   return (
     <>
       <Header cart={cart} totalQuantity={totalQuantity} />
-      <Outlet context={{ addToCart, cart, totalQuantity, removeFromCart }} />
+      <Outlet
+        context={{ addToCart, cart, setCart, totalQuantity, removeFromCart }}
+      />
       <Footer />
     </>
   );

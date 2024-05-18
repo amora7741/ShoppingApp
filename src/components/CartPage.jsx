@@ -1,10 +1,9 @@
-import { useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 
 import CartItem from './CartItem';
 
 function CartPage() {
-  const { cart, totalQuantity, removeFromCart } = useOutletContext();
+  const { cart, setCart, totalQuantity, removeFromCart } = useOutletContext();
 
   const totalPrice = cart
     .reduce(
@@ -24,7 +23,8 @@ function CartPage() {
   );
 
   const handleCheckout = () => {
-    alert('Will implement later. Lul');
+    alert('Thank you for shopping!');
+    setCart([]);
   };
 
   return (
