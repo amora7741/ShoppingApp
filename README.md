@@ -9,7 +9,7 @@ The Breeze Shopping App utilizes the FakeStoreAPI in order to fetch a selection 
 
 ## Installation
 * Clone the repository using `git clone`
-* `cd` into the MemoryGame directory
+* `cd` into the ShoppingApp directory
 * Run `npm i` to install the required dependencies
 * Run `npm run dev` to start the project and navigate to `http://localhost:3000` to see the project in action 
 
