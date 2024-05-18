@@ -11,6 +11,6 @@ The Breeze Shopping App utilizes the FakeStoreAPI in order to fetch a selection 
 * Clone the repository using `git clone`
 * `cd` into the ShoppingApp directory
 * Run `npm i` to install the required dependencies
-* Run `npm run dev` to start the project and navigate to `http://localhost:3000` to see the project in action 
+* Run `npm run dev` to start the project and navigate to `http://localhost:5173` to see the project in action 
 
 ![image](https://github.com/amora7741/ShoppingApp/assets/104049707/1c33238c-50f0-4a85-97c3-71006aba08d0)
